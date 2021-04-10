@@ -1,0 +1,4 @@
+CREATE SCHEMA first;
+CREATE SCHEMA second;
+CREATE SCHEMA third;
+
