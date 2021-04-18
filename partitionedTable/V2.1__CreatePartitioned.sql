@@ -1,0 +1,10 @@
+create table partition.part1 partition of partition.hub for values from (0) to (100001);
+create table partition.part2 partition of partition.hub for values from (100001) to (200001);
+create table partition.part3 partition of partition.hub for values from (200001) to (300001);
+create table partition.part4 partition of partition.hub for values from (300001) to (400001);
+create table partition.part5 partition of partition.hub for values from (400001) to (500001);
+create table partition.part6 partition of partition.hub for values from (500001) to (600001);
+create table partition.part7 partition of partition.hub for values from (600001) to (700001);
+create table partition.part8 partition of partition.hub for values from (700001) to (800001);
+create table partition.part9 partition of partition.hub for values from (800001) to (900001);
+create table partition.part10 partition of partition.hub for values from (900001) to (1000001);
