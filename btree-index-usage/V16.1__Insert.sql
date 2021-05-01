@@ -1,0 +1,1 @@
+insert into btree_index.table (a,b,c) select i, i+1, i*2 from generate_series(1,1000) as g(i);
