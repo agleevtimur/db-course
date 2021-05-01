@@ -1,0 +1,1 @@
+select * from btree_hash_brin.hash_table where name = 'test100';
