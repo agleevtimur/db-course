@@ -1,0 +1,34 @@
+Hash Join  (cost=1914.00..2933.00 rows=10000 width=287) (actual time=99.022..99.051 rows=0 loops=1)
+  Hash Cond: ((t1.name)::text = (t7.name)::text)
+  ->  Hash Join  (cost=1595.00..2476.50 rows=10000 width=246) (actual time=85.033..85.057 rows=0 loops=1)
+        Hash Cond: ((t1.name)::text = (t6.name)::text)
+        ->  Hash Join  (cost=1276.00..2020.00 rows=10000 width=205) (actual time=71.058..71.077 rows=0 loops=1)
+              Hash Cond: ((t1.name)::text = (t5.name)::text)
+              ->  Hash Join  (cost=957.00..1563.50 rows=10000 width=164) (actual time=57.002..57.017 rows=0 loops=1)
+                    Hash Cond: ((t1.name)::text = (t4.name)::text)
+                    ->  Hash Join  (cost=638.00..1107.00 rows=10000 width=123) (actual time=42.742..42.752 rows=0 loops=1)
+                          Hash Cond: ((t1.name)::text = (t3.name)::text)
+                          ->  Hash Join  (cost=319.00..650.50 rows=10000 width=82) (actual time=28.310..28.316 rows=0 loops=1)
+                                Hash Cond: ((t1.name)::text = (t2.name)::text)
+                                ->  Seq Scan on t1  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.006..6.459 rows=10000 loops=1)
+                                ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=14.437..14.440 rows=10000 loops=1)
+                                      Buckets: 16384  Batches: 1  Memory Usage: 841kB
+                                      ->  Seq Scan on t2  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.005..6.552 rows=10000 loops=1)
+                          ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=14.340..14.342 rows=10000 loops=1)
+                                Buckets: 16384  Batches: 1  Memory Usage: 841kB
+                                ->  Seq Scan on t3  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.006..6.425 rows=10000 loops=1)
+                    ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=14.228..14.231 rows=10000 loops=1)
+                          Buckets: 16384  Batches: 1  Memory Usage: 841kB
+                          ->  Seq Scan on t4  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.005..6.472 rows=10000 loops=1)
+              ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=14.024..14.026 rows=10000 loops=1)
+                    Buckets: 16384  Batches: 1  Memory Usage: 841kB
+                    ->  Seq Scan on t5  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.005..6.465 rows=10000 loops=1)
+        ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=13.943..13.945 rows=10000 loops=1)
+              Buckets: 16384  Batches: 1  Memory Usage: 841kB
+              ->  Seq Scan on t6  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.005..6.443 rows=10000 loops=1)
+  ->  Hash  (cost=194.00..194.00 rows=10000 width=41) (actual time=13.958..13.961 rows=10000 loops=1)
+        Buckets: 16384  Batches: 1  Memory Usage: 841kB
+        ->  Seq Scan on t7  (cost=0.00..194.00 rows=10000 width=41) (actual time=0.010..6.461 rows=10000 loops=1)
+Planning Time: 4.582 ms
+Execution Time: 99.149 ms
+
