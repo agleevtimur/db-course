@@ -1,0 +1,1 @@
+select * from vacuum.test where id = 1;
