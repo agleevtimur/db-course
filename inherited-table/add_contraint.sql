@@ -1,0 +1,10 @@
+alter table inherited.sub1 add constraint partition_check check (id >= 1 and id < 100001);
+alter table inherited.sub2 add constraint partition_check check (id >= 100001 and id < 200001);
+alter table inherited.sub3 add constraint partition_check check (id >= 200001 and id < 300001);
+alter table inherited.sub4 add constraint partition_check check (id >= 300001 and id < 400001);
+alter table inherited.sub5 add constraint partition_check check (id >= 400001 and id < 500001);
+alter table inherited.sub6 add constraint partition_check check (id >= 500001 and id < 600001);
+alter table inherited.sub7 add constraint partition_check check (id >= 600001 and id < 700001);
+alter table inherited.sub8 add constraint partition_check check (id >= 700001 and id < 800001);
+alter table inherited.sub9 add constraint partition_check check (id >= 800001 and id < 900001);
+alter table inherited.sub10 add constraint partition_check check (id >= 900001 and id < 1000001);
